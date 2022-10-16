@@ -102,6 +102,17 @@ const loginStartup = asyncHandler(async (req,res) => {
 // api/startup/getStartups
 // Auth Token given
 
+const getAllStartups = asyncHandler(async (req, res) => {
+    const startups = await Startup.find({});
+    res.send(startups);
+})
+
+
+
+// filter startups for a given queries
+// api/startup/getStartups
+// Auth Token given
+
 const getStartups = asyncHandler(async (req, res) => {
 
     const { minMarketcap,maxMarketcap,stage} = req.body;
@@ -114,4 +125,4 @@ const getStartups = asyncHandler(async (req, res) => {
 })
 
 
-module.exports = {registerStartup,loginStartup,getStartups};
+module.exports = {registerStartup,loginStartup,getStartups,getAllStartups};

@@ -9,7 +9,7 @@ const bcrypt = require('bcryptjs');
 // Req.body => name, email, password
 
 const registerInvestor = asyncHandler(async (req,res) => {
-    
+    // console.log("----------------------")
     console.log(req.body);
     const { name,email,password} = req.body;
 
